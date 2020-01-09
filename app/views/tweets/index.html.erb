@@ -1,0 +1,8 @@
+<div class=wrapper>
+  <div class="contents row" >
+    <% @tweets.each do |tweet| %>
+      <%= simple_format(tweet.text) %>
+      <div class="didd"></div>
+    <% end %>
+  </div>
+</div>

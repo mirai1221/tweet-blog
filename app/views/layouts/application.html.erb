@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <header class="header">
+      <nav class="header-main">
+        <h1><%=link_to("TweetBlog","/")%></h1>
+          <ul class="nav-bar">
+            <li>
+              <%=link_to("写真を見る","/")%>
+            </li>
+            <li>
+              <%=link_to("投稿する","/tweets/new")%>
+            </li>
+          </ul>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
