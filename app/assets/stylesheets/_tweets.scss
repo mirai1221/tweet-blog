@@ -2,31 +2,85 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  background: rgb(233, 227, 227);
   height: 100%;
+  font-family: Georgia, '游明朝', YuMincho, 'Hiragino Mincho ProN', Meiryo, serif;
+  margin:60px auto;
+  max-width:780px;
 }
 
-header {
+// @media screen and (max-width: px) {
+
+a {
+  text-decoration: none;
+}
+
+
+.header {
   background-color: white;
   border-bottom: 2px solid #bbb;
+  padding-bottom:20px;
+
+
   &__main {
+  display: flex;
+
+    &-title{
+      font-size: 50px;
+      color: inherit;
+      padding-right:40px;
+    }
+    &-nav{
+      display: flex;
+      align-items:flex-end;
+
+
+      li{
+        padding: 0 16px;
+        font-size: 17px;
+      }
+    }
   }
 }
 
 .wrapper {
-  background: aqua;
   height: 100%;
   width: 500px;
   margin: 0 auto;
+  padding-top: 40px;
 }
 
-.contents {
-  width: 600px;
-  margin: 5px auto 0;
-  background-color: #bbb;
+.contents{
+  width: 500px;
+  display: flex;
+  border-bottom: 2px solid #bbb;
+  padding: 30px 0 10px;
 }
-
-.didd {
-  background-color: aqua;
-  height: 30px;
+.contents-box{
+  &__day{
+    background-color: white;
+    padding-right: 75px;
+    width: 47.88%;
+  }
+  &__text{
+    width: 74.88%;
+    position: relative;
+    padding-left: 75px;
+    display: flex;
+    align-items:flex-end;
+    vertical-align: bottom;
+    justify-content:space-between;
+    .contents-box__text-tweet{
+    color:hsl(0, 0%, 7%);
+    font-size: 22.4px;
+    font-weight:700;
+    }
+    &-user{
+      h2{
+        margin-bottom: 24px;
+      }
+    }
+    &-edit{
+      
+    }
+  }
 }

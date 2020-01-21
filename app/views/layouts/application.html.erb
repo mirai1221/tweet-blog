@@ -4,23 +4,38 @@
     <title>TweetBlog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header class="header">
-      <nav class="header-main">
-        <h1><%=link_to("TweetBlog","/")%></h1>
-          <ul class="nav-bar">
-            <li>
-              <%=link_to("写真を見る","/")%>
-            </li>
-            <li>
-              <%=link_to("投稿する","/tweets/new")%>
-            </li>
-          </ul>
+      <nav class="header__main">
+        <h1><%=link_to "TweetBlog","/", class:"header__main-title"%></h1>
+        <ul class="header__main-nav">
+          <li>
+            <%=link_to("ホーム","/")%>
+          </li>
+        <% if user_signed_in? %>
+          <li>
+            <%=link_to("マイページ","/users/#{current_user.id}")%>
+          </li>
+          <li>
+            <%=link_to("投稿する","/tweets/new")%>
+          </li>
+          <li>
+            <%=link_to("ログアウト",destroy_user_session_path, method: :delete)%>
+          </li>
+          <li>
+          <%=link_to("#{current_user.nickname}","")%>
+          </li>
+        <% else %>
+          <li>
+            <%=link_to("ログイン",new_user_session_path, class: 'post')%>
+            <%=link_to("新規登録",new_user_registration_path, class: 'post')%>
+          </li>
+        <% end %>
+        </ul>
       </nav>
     </header>
     <%= yield %>

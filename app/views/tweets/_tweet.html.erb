@@ -1,0 +1,31 @@
+<div class="contents">
+  <div class="contents-box__day">
+    <%= tweet.created_at %>
+  </div>
+
+  <div class="contents-box__text">
+    <div class="contents-box__text-user">
+      <h2><%=link_to tweet.text, "/tweets/#{tweet.id}/", method: :get, class: "contents-box__text-tweet" %></h2>
+        投稿者
+      <%=link_to("#{tweet.user.nickname}","/users/#{tweet.user.id}") %>
+    </div>
+    <div class="contents-box__text-edit">
+    <div>
+        <ul>
+        <li>
+          <%=link_to '詳細', "/tweets/#{tweet.id}/", method: :get%>
+        </li>
+      <% if user_signed_in? && current_user.id == tweet.user.id%>
+          <li>
+            <%=link_to '編集', "/tweets/#{tweet.id}/edit", method: :get%>
+          </li>
+          <li>
+            <%=link_to '削除', "/tweets/#{tweet.id}", method: :delete%>
+          </li>
+        </ul>
+      <% end %>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
