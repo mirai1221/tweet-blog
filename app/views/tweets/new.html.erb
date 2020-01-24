@@ -1,8 +1,8 @@
 <div class="contents row">
   <div class="form-contents">
     <div class="form-contents__form">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d52499.3789089903!2d135.5075505!3d34.6746192!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6000e71e79518ccd%3A0x429c69c46f9caa44!2z44Ki44Kr44OB44Oj44Oz44Ob44Oz44OdIOWkp-mYquacrOeUuuW6lw!5e0!3m2!1sja!2sjp!4v1579777510473!5m2!1sja!2sjp" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
         <h2>投稿する</h2>
+
       <%= form_tag("/tweets",method: :post,class: 'form-contents__feild') do%>
         <input placeholder="Image URL" type="text" name="image" class="text-url">
         <textarea cols="30" name="text" placeholder="text" rows="5"></textarea>
