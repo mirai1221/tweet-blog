@@ -2,9 +2,8 @@
   <div class="form-contents">
     <div class="form-contents__form">
         <h2>投稿する</h2>
-
       <%= form_tag("/tweets",method: :post,class: 'form-contents__feild') do%>
-        <input placeholder="Image URL" type="text" name="image" class="text-url">
+        <input placeholder="画像 URL" type="text" name="image" class="text-url">
         <textarea cols="30" name="text" placeholder="text" rows="5"></textarea>
         <input type="submit" value="送信">
       <% end %>
