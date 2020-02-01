@@ -10,13 +10,13 @@
       </div>
 
       <div class="field">
-        <%= f.label :メールアドレス %><em>(6文字以降)</em><br />
+        <%= f.label :メールアドレス %><br />
         <%= f.email_field :email %>
       </div>
 
 
       <div class="field">
-        <%= f.label :パスワード %>
+        <%= f.label :パスワード %><em>(6文字以降)</em>
         <% if @validatable %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
